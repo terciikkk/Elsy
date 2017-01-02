@@ -32,7 +32,7 @@ class App extends Component {
           <div className="column">
             <img src={require('./icons/lsys.svg')} style={{ width: '4em', height: '4em' }}/>
             <Settings ref={c => this._settings = c} settings={this.state.settings} onChange={this.handleSettingsChange.bind(this)} />
-            <AnimationControl ref={c => this._animation = c} animation={this.state.settings.animation} onChange={a => this.handleAnimChange(a)} onDrawFrame={frame => this.handleDrawFrame(frame)} />
+            <AnimationControl ref={c => this._animation = c} animation={this.state.settings.animation} angle={this.state.settings.generate.angle} onChange={a => this.handleAnimChange(a)} onDrawFrame={frame => this.handleDrawFrame(frame)} />
             <ImportExport ref={c => this._export = c} onExport={this.handleExport.bind(this)} onImport={this.handleImport.bind(this)} />
             <GrammarEditor grammar={this.state.settings.grammar} onApply={g => this.handleGrammarApply(g)} />
             <Section text="Other">

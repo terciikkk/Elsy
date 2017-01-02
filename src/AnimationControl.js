@@ -13,9 +13,11 @@ class Control extends Component {
   }
 
   render() {
+    let angle = String(this.props.angle + this.state.frame * this.state.step).substring(0, 10);
     return (
       <div>
         <Section text="Animation">
+          <Input icon={require('./icons/angle.svg')} label="Angle" initialValue={angle} readOnly={true} onChange={(v) => this.onChange({ step: v })} />
           <Input icon={require('./icons/speed.svg')} label="Step" initialValue={this.state.step} onChange={(v) => this.onChange({ step: v })} />
           <Input ref={c => this._frameInput = c} icon={require('./icons/time.svg')} label="Frame" initialValue={this.state.frame} onChange={(v) => this.onFrameChanged(v)} validate={Control.validateFrame} />
           <Button text="Play" icon={require('./icons/play.svg')} noMarginLeft={true} onClick={this.startAnimation.bind(this, 'start')}/>

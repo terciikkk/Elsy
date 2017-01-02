@@ -16,7 +16,7 @@ class Input extends Component {
   }
 
   componentWillReceiveProps(nextProps) {
-    if (this._willReset) {
+    if (this._willReset || this.props.readOnly) {
       this._willReset = false;
       this.setState({ value: this.toStr(nextProps.initialValue), valid: true });
     }
@@ -50,10 +50,12 @@ class Input extends Component {
 
     let input;
     if (this.props.multiline !== true) {
-      input = <input ref={c => this._input = c} style={inputStyle} type="text" className={classes} value={this.state.value} onChange={this._handleChange}/>;
+      input = <input ref={c => this._input = c} disabled={this.props.readOnly} style={inputStyle} type="text" className={classes}
+        value={this.state.value} onChange={this._handleChange}/>;
     } else {
       classes += ' multiline-input';
-      input = <textarea ref={c => this._input = c} style={inputStyle} rows={this.props.rows || 4} className={classes} value={this.state.value} onChange={this._handleChange}/>;
+      input = <textarea ref={c => this._input = c}  disabled={this.props.readOnly} style={inputStyle} rows={this.props.rows || 4} className={classes}
+        value={this.state.value} onChange={this._handleChange}/>;
     }
     //<span>{this.props.label}</span>
 
