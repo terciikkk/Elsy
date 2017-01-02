@@ -74,7 +74,7 @@ class ImportExport extends Component {
         let data = JSON.parse(contents);
         this.props.onImport(data);
 
-        this.setState({ inputVisible: false });
+        //this.setState({ inputVisible: false }); no-op
       } catch (er) {
         console.error(er);
         //TODO: handle error

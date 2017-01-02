@@ -90,6 +90,9 @@ class Canvas extends Component {
     this._engine.frame = value;
   }
 
+  autoscale() {
+    return this._engine.autoscale();
+  }
 }
 
 export default Canvas;

@@ -34,8 +34,8 @@ class AdvancedActions {
     this.angle = this.options.angle || 0;
     this.step = this.options.step || 5;
 
-    this.angleStep = this.options.angleStep || 0.1;
-    this.stepStep = this.options.stepStep || 0.01;
+    this.angleStep = this.options.angleStep || 0;
+    this.stepStep = this.options.stepStep || 0;
   }
 
   get actions() {

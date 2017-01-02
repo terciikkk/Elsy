@@ -16,7 +16,8 @@ class ContextDraw {
         let lines = 0;
 
         this.ctx.translate(this.options.x || 0, this.options.y || 0);
-        this.ctx.rotate((this.options.rotation || 0) / 180 * Math.PI);
+        let rotation = (this.options.rotation || 0);
+        this.ctx.rotate(rotation / 180 * Math.PI);
         let scale = this.options.scale || 1;
         this.ctx.scale(scale, scale);
         this.ctx.strokeStyle = this.options.color.str()
@@ -43,10 +44,13 @@ class ContextDraw {
             this.ctx.lineTo(p2.x, p2.y);
             lines++;
 
-            compX(p1.x);
-            compX(p2.x);
-            compY(p1.y);
-            compY(p2.y);
+            let p1r = p1.rotate(rotation);
+            let p2r = p2.rotate(rotation);
+
+            compX(p1r.x);
+            compX(p2r.x);
+            compY(p1r.y);
+            compY(p2r.y);
 
             if (lines % 1000 === 0) {
               let ms = performance.now() - t0;
