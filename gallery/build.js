@@ -32,7 +32,7 @@ new Promise((resolve, reject) => {
 ).then(files => {
   let galleryData = { data: [] };
   for (let file of files) {
-    let name = file.file.match(/gallery\/(\w+)\.json/)[1];
+    let name = file.file.match(/gallery\/([a-zA-Z0-9\(\)]+)\.json/)[1];
 
     galleryData.data.push({
       name,
@@ -40,7 +40,7 @@ new Promise((resolve, reject) => {
       data: file.data
     });
 
-    child_process.execSync(`convert gallery/${name}.png -resize 640 gallery_resized/${name}.png`);
+    child_process.execSync(`convert "gallery/${name}.png" -resize 640 "gallery_resized/${name}.png"`);
   }
 
   galleryData.data.sort((a,b) => a.name - b.name);

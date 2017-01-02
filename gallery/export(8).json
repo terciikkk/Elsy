@@ -1,0 +1,1 @@
+{"grammar":{"start":"X","rules":{"X":"-YF+XFX+FY-","Y":"+XF-YFY-FX+"}},"animation":{"step":0.01,"speed":30},"render":{"offset":{"x":-321,"y":321},"rotation":0,"zoom":517.741,"lineWidth":0.5,"iterations":6},"colors":{"background":"#191919","lines":"#FFFFFF"},"generate":{"angle":90,"step":4,"angleStep":0.11540900000000301,"stepStep":0.01}}

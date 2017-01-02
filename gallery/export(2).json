@@ -1,0 +1,1 @@
+{"grammar":{"start":"S","rules":{"S":"F+>[F-Y[S]]F)X","Y":"--[|F-F-FY]","X":"FXY[+F]+Y"}},"animation":{"step":0.01,"speed":30},"render":{"offset":{"x":-15,"y":7},"rotation":0,"zoom":104.386,"lineWidth":0.5,"iterations":30},"colors":{"background":"#191919","lines":"#FFFFFF"},"generate":{"angle":-3669.39,"step":9,"angleStep":-0.05531299999999828,"stepStep":0.0001}}

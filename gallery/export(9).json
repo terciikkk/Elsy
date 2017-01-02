@@ -1,0 +1,1 @@
+{"grammar":{"start":"C","rules":{"C":"S!|VFFC","S":"F!++[F-YAS]","A":"F-<|A!","V":"XVY","X":"-","Y":"!-"}},"animation":{"step":0.01,"speed":30},"render":{"offset":{"x":-190,"y":-99},"rotation":0,"zoom":308.606,"lineWidth":0.5,"iterations":33},"colors":{"background":"#191919","lines":"#FFFFFF"},"generate":{"angle":-4055.8,"step":4,"angleStep":0.05,"stepStep":0}}

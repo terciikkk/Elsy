@@ -1,0 +1,1 @@
+{"grammar":{"start":"L","rules":{"L":"SS","S":"F-[F-Y[S<(L]]","Y":"[-|F-F+)Y]"}},"animation":{"step":0.01,"speed":30},"render":{"offset":{"x":3,"y":12},"rotation":-3,"zoom":44.0062,"lineWidth":0.5,"iterations":12},"colors":{"background":"#191919","lines":"#FFFFFF"},"generate":{"angle":9840.1,"step":71.19,"angleStep":0.05,"stepStep":0.01}}

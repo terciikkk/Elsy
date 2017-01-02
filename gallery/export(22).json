@@ -1,0 +1,1 @@
+{"grammar":{"start":"F-G-G","rules":{"F":"F-G+F+G-F","G":"GG"}},"animation":{"step":0.01,"speed":30},"render":{"offset":{"x":-371,"y":321},"rotation":0,"zoom":16.2706,"lineWidth":0.5,"iterations":7},"colors":{"background":"#191919","lines":"#FFFFFF"},"generate":{"angle":120,"step":71.19,"angleStep":0.05,"stepStep":0.01}}

@@ -1,0 +1,1 @@
+{"grammar":{"start":"SSSSSS","rules":{"S":"<|+[F[S]]|"}},"animation":{"step":0.01,"speed":30},"render":{"offset":{"x":4,"y":6},"rotation":-3,"zoom":529.134,"lineWidth":0.5,"iterations":200},"colors":{"background":"#191919","lines":"#FFFFFF"},"generate":{"angle":-3179.7,"step":71.19,"angleStep":0.05,"stepStep":0.01}}

@@ -1,0 +1,1 @@
+{"grammar":{"start":"L","rules":{"L":"|-S!L!Y","S":"[F[FF-YS]F)X]+","Y":"--[F-)>F-FX]-","X":"FXF[Y+<F]+Y"}},"animation":{"step":0.01,"speed":30},"render":{"offset":{"x":11,"y":248},"rotation":0,"zoom":180.32,"lineWidth":0.5,"iterations":13},"colors":{"background":"#191919","lines":"#FFFFFF"},"generate":{"angle":-3963.7485,"step":14.11,"angleStep":-0.138235,"stepStep":-1.359672}}

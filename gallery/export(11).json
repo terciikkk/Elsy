@@ -1,0 +1,1 @@
+{"grammar":{"start":"C","rules":{"C":"[B]F|C","B":"!AB)!A-F","A":"-A<F+"}},"animation":{"step":0.01,"speed":30},"render":{"offset":{"x":-88,"y":7},"rotation":-90,"zoom":348.16,"lineWidth":0.5,"iterations":40},"colors":{"background":"#191919","lines":"#FFFFFF"},"generate":{"angle":-1255.5,"step":4,"angleStep":0.05,"stepStep":0}}
