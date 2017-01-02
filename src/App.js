@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 import './Column.css';
 
+import ReactTooltip from 'react-tooltip'
+
 import Canvas from './lsys/Canvas.js'
 import Settings from './Settings.js'
 import ImportExport from './ImportExport.js'
@@ -41,13 +43,14 @@ class App extends Component {
             <GrammarEditor grammar={this.state.settings.grammar} onApply={g => this.handleGrammarApply(g)} />
             <Section text="Other">
               <Gallery openSystem={data => this.handleImport(data)} />
-              <Button text="Autofit" autoWidth={true} noMarginLeft={true} style={{ width: '12em' }} onClick={this.onAutofit.bind(this)}/>
+              <Button text="Autofit" tooltip="Fit L-system to screen" autoWidth={true} noMarginLeft={true} style={{ width: '12em' }} onClick={this.onAutofit.bind(this)}/>
             </Section>
           </div>
           <div className="render">
-          <Canvas ref={(c) => this._canvas = c} settings={this.state.settings} />
+            <Canvas ref={(c) => this._canvas = c} settings={this.state.settings} />
           </div>
         </div>
+        <ReactTooltip delayShow={500}/>
       </div>
     );
   }

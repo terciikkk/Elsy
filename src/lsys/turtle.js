@@ -21,15 +21,17 @@ class Turtle {
     this.forward(-step);
   }
 
-  forward(step) {
+  forward(step, draw = true) {
     let pos = this._position;
     this._position = this._position.add(V.fromAngle(this._angle % 360).mult(step));
 
-    this._draw(pos, this._position);
+    if (draw) {
+      this._draw(pos, this._position);
+    }
   }
 
   move(step) {
-    this._position = this._position.add(V.fromAngle(this._angle % 360).mult(step));
+    this.forward(step, false);
   }
 
   left(angle) {
