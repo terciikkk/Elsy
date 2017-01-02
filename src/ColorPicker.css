@@ -1,0 +1,10 @@
+.ColorPicker {
+  display: inline;
+}
+
+.ColorPicker .label-span {
+  width: 6em;
+  display: inline-block;
+  margin-right: 1em;
+  vertical-align: super;
+}

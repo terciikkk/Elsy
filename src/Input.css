@@ -1,0 +1,30 @@
+
+.Input {
+  padding: 0.2em;
+  padding-left: 0;
+}
+
+.Input .Input-label{
+  padding: 0.5em;
+  background: #2b2b2b;
+  color: #b6b7b6;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.Input .input {
+  background-color: #494949;
+  color: black;
+  width: 8.75em;
+  border-style: none;
+  padding: 0.5em;
+}
+
+.Input .input.multiline-input {
+  width: 12em;
+  white-space: pre;
+}
+
+.Input .input.input-invalid {
+  background-color: #F5595A;
+}

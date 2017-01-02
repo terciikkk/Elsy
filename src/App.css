@@ -1,0 +1,43 @@
+body {
+  background-color: #191919;
+  font-size: small;
+  color: black;
+}
+
+.app {
+}
+.column {
+  float: left;
+  width: 15.6em;
+  height: 100vh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  border-right: #494949;
+  border-right-width: 2px;
+  border-right-style: solid;
+
+  padding: 1em;
+}
+.render {
+  float: right;
+  width: calc(100% - 15.6em);
+}
+
+/*scrollbar*/
+::-webkit-scrollbar
+{
+  width: 12px;  /* for vertical scrollbars */
+  height: 12px; /* for horizontal scrollbars */
+}
+
+::-webkit-scrollbar-track
+{
+  background: rgba(0, 0, 0, 0.1);
+}
+
+::-webkit-scrollbar-thumb
+{
+  background: rgba(0, 0, 0, 0.5);
+}

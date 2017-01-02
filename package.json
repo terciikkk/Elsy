@@ -1,0 +1,22 @@
+{
+  "name": "lsys",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "http://ufonzak.neocities.org/build",
+  "devDependencies": {
+    "react-scripts": "0.8.0"
+  },
+  "dependencies": {
+    "downloadjs": "rndme/download",
+    "glob": "^7.1.1",
+    "react": "~15.4.1",
+    "react-color": "~2.9.0",
+    "react-dom": "~15.4.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
