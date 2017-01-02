@@ -14,8 +14,8 @@ class Panel extends Component {
     return (
       <div className="Settings">
         <Section text="Drawing">
-          <Input icon={require('./icons/offset.svg')} label="Offset" type="vector" initialValue={settings.render.offset} onChange={(v) => this._handleChange({ render: { offset: v } })} />
-          <Input icon={require('./icons/size.svg')} label="Zoom" initialValue={settings.render.zoom} onChange={(v) => this._handleChange({ render: { zoom: v } })} />
+          <Input ref={c => this._offset = c}icon={require('./icons/offset.svg')} label="Offset" type="vector" initialValue={settings.render.offset} onChange={(v) => this._handleChange({ render: { offset: v } })} />
+          <Input ref={c => this._zoom = c} icon={require('./icons/size.svg')} label="Zoom" initialValue={settings.render.zoom} onChange={(v) => this._handleChange({ render: { zoom: v } })} />
           <Input icon={require('./icons/rotate.svg')} label="Rotation" initialValue={settings.render.rotation} onChange={(v) => this._handleChange({ render: { rotation: v } })} />
           <Input icon={require('./icons/iteration.svg')} label="Iterations" initialValue={settings.render.iterations} onChange={(v) => this._handleChange({ render: { iterations: v } })} />
 
@@ -38,6 +38,13 @@ class Panel extends Component {
 
   _handleChange(change)  {
     this.props.onChange(change);
+  }
+
+  autoscale(changes) {
+    this._offset.reset();
+    this._zoom.reset();
+    let scale = parseFloat(String(changes.scale).substring(0, 7)); //text rounding
+    this._handleChange({ render: { zoom: scale, offset: { x: Math.round(changes.x), y: Math.round(changes.y) } } });
   }
 }
 

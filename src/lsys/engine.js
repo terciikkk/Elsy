@@ -12,6 +12,7 @@ class Engine {
     this.height = 100;
     this.width = 100;
     this.animation = 0;
+    this.frame = 0;
   }
 
   start(settings) {
@@ -64,7 +65,7 @@ class Engine {
 
     let draw = new ContextDraw(this.ctx, this.grammar, this.actions.actions, this._getDrawOptions());
 
-    return draw.draw();
+    this.drawResult = draw.draw();
   }
 
   svgDraw(element) {
@@ -83,6 +84,25 @@ class Engine {
   bg(color) {
     this.ctx.fillStyle = color.str();
     this.ctx.fillRect(0, 0, this.width, this.height);
+  }
+
+  autoscale() {
+    let cX = (this.drawResult.x.max + this.drawResult.x.min) / 2;
+    let cY = (this.drawResult.y.max + this.drawResult.y.min) / 2;
+
+    let width = this.drawResult.x.max - this.drawResult.x.min;
+    let height = this.drawResult.y.max - this.drawResult.y.min;
+    if (width < 1) width = 1;
+    if (height < 1) height = 1;
+
+    let scale = Math.min((this.width - 30) / width, (this.height - 30) / height);
+    let x = -cX * scale;
+    let y = -cY * scale;
+    return {
+      scale: scale * 100,
+      x,
+      y
+    };
   }
 
 }

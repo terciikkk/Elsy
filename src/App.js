@@ -6,6 +6,7 @@ import Canvas from './lsys/Canvas.js'
 import Settings from './Settings.js'
 import ImportExport from './ImportExport.js'
 import GrammarEditor from './GrammarEditor.js'
+import Button from './Button.js'
 import AnimationControl from './AnimationControl.js'
 import Gallery from './Gallery.js'
 import Section from './Section.js'
@@ -19,7 +20,6 @@ class App extends Component {
   }
 
   componentWillUpdate(nextProps, nextState) {
-    console.log('New state', nextState);
   }
 
   render() {
@@ -37,10 +37,11 @@ class App extends Component {
             <GrammarEditor grammar={this.state.settings.grammar} onApply={g => this.handleGrammarApply(g)} />
             <Section text="Other">
               <Gallery openSystem={data => this.handleImport(data)} />
+              <Button text="Autofit" autoWidth={true} noMarginLeft={true} style={{ width: '12em' }} onClick={this.onAutofit.bind(this)}/>
             </Section>
           </div>
           <div className="render">
-            <Canvas ref={(c) => this._canvas = c} settings={this.state.settings} />
+          <Canvas ref={(c) => this._canvas = c} settings={this.state.settings} />
           </div>
         </div>
       </div>
@@ -85,6 +86,11 @@ class App extends Component {
     this.setState({ recreate: true, settings: data }, () => {
       this.setState({ recreate: false })
     });
+  }
+
+  onAutofit() {
+    let changes = this._canvas.autoscale();
+    this._settings.autoscale(changes);
   }
 }
 

@@ -56,7 +56,7 @@ class Gallery extends Component {
 
     return (
       <div className="Gallery">
-        <Button text="Open Gallery" autoWidth={true} noMarginLeft={true} style={{ }} onClick={this.handleOpen.bind(this)}/>
+        <Button text="Open Gallery" autoWidth={true} noMarginLeft={true} style={{ width: '12em' }} onClick={this.handleOpen.bind(this)}/>
 
         { this.state.display ?
           <div style={ styles.popover }>
