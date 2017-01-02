@@ -11,7 +11,8 @@
     "downloadjs": "rndme/download",
     "react": "~15.4.1",
     "react-color": "~2.9.0",
-    "react-dom": "~15.4.1"
+    "react-dom": "~15.4.1",
+    "reactcss": "^1.1.1"
   },
   "scripts": {
     "start": "react-scripts start",
