@@ -1,0 +1,10 @@
+.custom-tooltip {
+  border-radius: 0 !important;
+  background-color: #6b6b6b !important;
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+
+.custom-tooltip::before, .custom-tooltip::after{
+    border: 0 !important;
+}

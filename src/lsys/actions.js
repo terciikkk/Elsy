@@ -6,6 +6,8 @@ class AdvancedActions {
     this._actions = {
       "F": (t) => t.forward(this.step),
       "G": (t) => t.forward(this.step),
+      "f": (t) => t.move(this.step),
+      "g": (t) => t.move(this.step),
       "+": (t) => t.left(this.angle),
       "-": (t) => t.right(this.angle),
       ")": (t) => this.angle *= 1 + this.angleStep,

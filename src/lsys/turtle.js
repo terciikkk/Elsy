@@ -28,6 +28,10 @@ class Turtle {
     this._draw(pos, this._position);
   }
 
+  move(step) {
+    this._position = this._position.add(V.fromAngle(this._angle % 360).mult(step));
+  }
+
   left(angle) {
     this._angle += angle;
   }

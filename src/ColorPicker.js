@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { SketchPicker } from 'react-color';
+import ReactTooltip from 'react-tooltip'
 import reactCSS from 'reactcss'
 import './ColorPicker.css'
+import './Tooltip.css'
 const $ = window.$;
 
 class Input extends Component {
@@ -38,10 +40,22 @@ class Input extends Component {
       },
     });
 
+    let tooltip;
+    let tooltipData;
+    if (this.props.tooltip) {
+      tooltip = <ReactTooltip class="custom-tooltip" id={this.props.tooltip} place="right" type="dark" effect="float">
+                <span>{this.props.tooltip}</span>
+              </ReactTooltip>
+      tooltipData = this.props.tooltip
+    }
+
+
+
     //TODO: fix offset when scrolling
 
     return (
-      <div className="ColorPicker">
+      <div className="ColorPicker" data-tip data-for={tooltipData}>
+      {tooltip}
         <span style={style} onClick={ this.handleClick }>&nbsp;</span>
 
         { this.state.displayColorPicker ?

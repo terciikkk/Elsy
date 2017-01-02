@@ -1,5 +1,7 @@
 import React, { Component, Image } from 'react';
+import ReactTooltip from 'react-tooltip'
 import './Input.css'
+import './Tooltip.css'
 const $ = window.$;
 
 class Input extends Component {
@@ -37,7 +39,14 @@ class Input extends Component {
     let icon;
     if (this.props.icon) {
       hasLabel = true;
-      icon = <img src={this.props.icon}/>
+    icon = <img src={this.props.icon} data-tip data-for={this.props.tooltip}/>
+    }
+
+    let tooltip;
+    if (this.props.tooltip) {
+      tooltip = <ReactTooltip class="custom-tooltip" id={this.props.tooltip} place="right" effect="float">
+                <span>{this.props.tooltip}</span>
+              </ReactTooltip>
     }
 
     let label;
@@ -64,6 +73,7 @@ class Input extends Component {
     return (
       <div className="Input">
         {icon}
+        {tooltip}
         {label}
         {input}
       </div>
