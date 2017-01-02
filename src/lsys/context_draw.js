@@ -76,7 +76,6 @@ class ContextDraw {
 
         let t1 = performance.now();
         console.log(`Drawn ${lines} lines in ${(t1 - t0).toFixed(4)} ms.`);
-        console.log(x,y);
 
         return {
           x,

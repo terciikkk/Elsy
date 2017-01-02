@@ -34,7 +34,7 @@ class App extends Component {
               <img src={require('./icons/lsys_logo.svg')} style={{ background: 'none', width: '4em', height: '4em' }}/>
               <h1 style={{ color: '#b6b7b6', marginLeft: '0', display: 'inline-block', lineHeight: '1.3em', marginLeft: '0.3em' }}>Elsy</h1>
             </div>
-            
+
             <Settings ref={c => this._settings = c} settings={this.state.settings} onChange={this.handleSettingsChange.bind(this)} />
             <AnimationControl ref={c => this._animation = c} animation={this.state.settings.animation} angle={this.state.settings.generate.angle} onChange={a => this.handleAnimChange(a)} onDrawFrame={frame => this.handleDrawFrame(frame)} />
             <ImportExport ref={c => this._export = c} onExport={this.handleExport.bind(this)} onImport={this.handleImport.bind(this)} />
@@ -125,7 +125,7 @@ let defaultSettings = {
   },
   "generate": {
     "angle": -3832.29,
-    "step": 8,
+    "step": 7,
     "angleStep": 0.081453,
     "stepStep": 0.01
   }

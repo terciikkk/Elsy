@@ -18,7 +18,7 @@ class Control extends Component {
       <div>
         <Section text="Animation">
           <Input icon={require('./icons/angle.svg')} label="Angle" initialValue={angle} readOnly={true} onChange={(v) => this.onChange({ step: v })} />
-          <Input icon={require('./icons/speed.svg')} label="Step" initialValue={this.state.step} onChange={(v) => this.onChange({ step: v })} />
+          <Input icon={require('./icons/speed.svg')} label="Step" initialValue={this.state.step} wheelChange={0.01} onChange={(v) => this.onChange({ step: v })} />
           <Input ref={c => this._frameInput = c} icon={require('./icons/time.svg')} label="Frame" initialValue={this.state.frame} onChange={(v) => this.onFrameChanged(v)} validate={Control.validateFrame} />
           <Button text="Play" icon={require('./icons/play.svg')} noMarginLeft={true} onClick={this.startAnimation.bind(this, 'start')}/>
           <Button text="Pause" icon={require('./icons/pause.svg')} onClick={this.stopAnimation.bind(this, 'stop')}/>

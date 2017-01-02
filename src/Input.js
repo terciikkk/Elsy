@@ -51,7 +51,9 @@ class Input extends Component {
     let input;
     if (this.props.multiline !== true) {
       input = <input ref={c => this._input = c} disabled={this.props.readOnly} style={inputStyle} type="text" className={classes}
-        value={this.state.value} onChange={this._handleChange}/>;
+        value={this.state.value} onChange={this._handleChange}
+        onFocus={() => this.isFocused = true} onBlur={() => this.isFocused = false}
+        onWheel={this.onMouseWheel.bind(this)}/>;
     } else {
       classes += ' multiline-input';
       input = <textarea ref={c => this._input = c}  disabled={this.props.readOnly} style={inputStyle} rows={this.props.rows || 4} className={classes}
@@ -69,7 +71,9 @@ class Input extends Component {
   }
 
   _handleChange() {
-    let value = this._input.value;
+    this._handleValue( this._input.value);
+  }
+  _handleValue(value) {
     let parsed = this.parser(value);
     let valid = this.props.validate ? this.props.validate(parsed) : true;
     if (parsed === null || !valid) {
@@ -99,6 +103,21 @@ class Input extends Component {
     }
   }
 
+  onMouseWheel(e) {
+    if (this.type !== 'float') return;
+    if (this.isFocused !== true) return;
+
+    e.preventDefault();
+    //console.log(e.deltaMode, e.deltaX, e.deltaY);
+
+    let parsed = this.parser(this.state.value);
+    if (parsed === null) return;
+
+    let change = Math.sign(e.deltaY) * (this.props.wheelChange || 1);
+
+    this._handleValue(this.toStr(parsed + change));
+  }
+
   _floatParse(value) {
     if (!value.match(/^\-?\d+\.?\d*$/)) return null;
     value = parseFloat(value);
@@ -106,7 +125,12 @@ class Input extends Component {
     return value;
   }
   _floatToStr(value) {
-    return String(value || 0);
+    value = value || 0;
+    if (Number.isFinite(value)) {
+       if (Math.abs(value) < 1e-06) value = 0;
+       value = Math.round(value * 1e6) / 1e6;
+    }
+    return String(value);
   }
 
   _vectorParse(value) {
