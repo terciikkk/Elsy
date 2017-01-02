@@ -69,7 +69,7 @@ class ContextDraw {
           console.error(er);
           this.ctx.beginPath(); //reset path
 
-          this.ctx.fillText("Error during rendering: " + er.message, 0, 0);
+          this.ctx.fillText(/*"Error during rendering: " + er.message*/"Error: Too many interations.", 0, 0);
         }
 
         this.ctx.stroke();

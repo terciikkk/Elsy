@@ -37,12 +37,13 @@ class App extends Component {
               <h1 style={{ color: '#b6b7b6', marginLeft: '0', display: 'inline-block', lineHeight: '1.3em', marginLeft: '0.3em' }}>Elsy</h1>
             </div>
 
+            <Gallery openSystem={data => this.handleImport(data)} />
+
             <Settings ref={c => this._settings = c} settings={this.state.settings} onChange={this.handleSettingsChange.bind(this)} />
             <AnimationControl ref={c => this._animation = c} animation={this.state.settings.animation} angle={this.state.settings.generate.angle} onChange={a => this.handleAnimChange(a)} onDrawFrame={frame => this.handleDrawFrame(frame)} />
             <ImportExport ref={c => this._export = c} onExport={this.handleExport.bind(this)} onImport={this.handleImport.bind(this)} />
             <GrammarEditor grammar={this.state.settings.grammar} onApply={g => this.handleGrammarApply(g)} />
             <Section text="Other">
-              <Gallery openSystem={data => this.handleImport(data)} />
               <Button text="Autofit" tooltip="Fit L-system to screen" autoWidth={true} noMarginLeft={true} style={{ width: '12em' }} onClick={this.onAutofit.bind(this)}/>
             </Section>
           </div>
@@ -50,7 +51,7 @@ class App extends Component {
             <Canvas ref={(c) => this._canvas = c} settings={this.state.settings} />
           </div>
         </div>
-        <ReactTooltip delayShow={500}/>
+        <ReactTooltip class="custom-tooltip" delayShow={500}/>
       </div>
     );
   }
