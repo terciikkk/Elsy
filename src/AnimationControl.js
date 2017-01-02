@@ -17,12 +17,12 @@ class Control extends Component {
     return (
       <div>
         <Section text="Animation">
-          <Input icon={require('./icons/angle.svg')} tooltip="Angle" initialValue={angle} readOnly={true} onChange={(v) => this.onChange({ step: v })} />
-          <Input icon={require('./icons/speed.svg')} tooltip="Speed" initialValue={this.state.step} wheelChange={0.01} onChange={(v) => this.onChange({ step: v })} />
-          <Input ref={c => this._frameInput = c} icon={require('./icons/time.svg')} tooltip="Time" initialValue={this.state.frame} onChange={(v) => this.onFrameChanged(v)} validate={Control.validateFrame} />
-          <Button text="Play" icon={require('./icons/play.svg')} noMarginLeft={true} onClick={this.startAnimation.bind(this, 'start')}/>
-          <Button text="Pause" icon={require('./icons/pause.svg')} onClick={this.stopAnimation.bind(this, 'stop')}/>
-          <Button text="Reset" icon={require('./icons/refresh.svg')} onClick={this.resetAnimation.bind(this, 'reset')}/>
+          <Input icon={require('./icons/angle.svg')} tooltip="Frame angle" initialValue={angle} readOnly={true} onChange={(v) => this.onChange({ step: v })} />
+          <Input icon={require('./icons/speed.svg')} tooltip="Animation speed" initialValue={this.state.step} wheelChange={0.01} onChange={(v) => this.onChange({ step: v })} />
+          <Input ref={c => this._frameInput = c} icon={require('./icons/time.svg')} tooltip="Frame" initialValue={this.state.frame} onChange={(v) => this.onFrameChanged(v)} validate={Control.validateFrame} />
+          <Button text="Play" tooltip="Play" icon={require('./icons/play.svg')} noMarginLeft={true} onClick={this.startAnimation.bind(this, 'start')}/>
+          <Button text="Pause" tooltip="Pause" icon={require('./icons/pause.svg')} onClick={this.stopAnimation.bind(this, 'stop')}/>
+          <Button text="Reset" tooltip="Reset" icon={require('./icons/refresh.svg')} onClick={this.resetAnimation.bind(this, 'reset')}/>
         </Section>
       </div>
     );

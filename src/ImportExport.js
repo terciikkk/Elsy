@@ -15,11 +15,11 @@ class ImportExport extends Component {
     return (
       <div>
         <Section text="Export / Import">
-          <Button noMarginLeft={true} text="SVG" onClick={this.onExport.bind(this, 'svg')} />
-          <Button text="PNG" onClick={this.onExport.bind(this, 'png')} />
+          <Button tooltip="Export to SVG vector format" noMarginLeft={true} text="SVG" onClick={this.onExport.bind(this, 'svg')} />
+          <Button tooltip="Export to PNG picture" text="PNG" onClick={this.onExport.bind(this, 'png')} />
           <br/>
-          <Button noMarginLeft={true} text="EXP" onClick={this.onExport.bind(this, 'json')}/>
-          <Button text="IMP" onClick={this.onImportClick.bind(this)}/>
+          <Button tooltip="Export to internal format" noMarginLeft={true} text="EXP" onClick={this.onExport.bind(this, 'json')}/>
+          <Button tooltip="Import from internal format" text="IMP" onClick={this.onImportClick.bind(this)}/>
           <br/>
           <input className="file-input" ref={c => this._fileInput = c} type="file" style={{ display: this.state.inputVisible ? null : 'none' }}/>
         </Section>

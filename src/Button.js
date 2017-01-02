@@ -32,7 +32,7 @@ class Button extends Component {
       inner = <span>{this.props.text}</span>
     }
     return (
-      <div className="Button" style={style} onClick={this.props.onClick}>
+      <div className="Button" style={style} data-tip={this.props.tooltip} onClick={this.props.onClick}>
         {inner}
       </div>
     )

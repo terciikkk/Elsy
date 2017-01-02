@@ -16,9 +16,9 @@ class Editor extends Component {
     return (
       <div>
         <Section text="Grammar">
-          <Input label="Initial" showLabel={true} labelStyle={{ width: '3.5em'}} inputStyle={{ width: '7.75em' }} type="text" throtle={0} initialValue={this.state.start} onChange={(v) => this.onInitChanged(v)} />
+          <Input label="Initial" tooltip="Axiom" showLabel={true} labelStyle={{ width: '3.5em'}} inputStyle={{ width: '7.75em' }} type="text" throtle={0} initialValue={this.state.start} onChange={(v) => this.onInitChanged(v)} />
           <Input label="Rules" type="grammar" multiline={true} rows={10} throtle={0} initialValue={this.state.rules} onChange={(v) => this.onGrammarChanged(v)} />
-          <Button text="Apply" autoWidth={true} noMarginLeft={true} style={{ marginTop: 0 }} onClick={this.onApply.bind(this)}/>
+          <Button text="Apply" tooltip="Apply grammar" autoWidth={true} noMarginLeft={true} style={{ marginTop: 0 }} onClick={this.onApply.bind(this)}/>
         </Section>
       </div>
     );
